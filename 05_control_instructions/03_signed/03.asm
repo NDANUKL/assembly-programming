@@ -1,6 +1,7 @@
 ; JL / JNGE → Jump if Less
 section .data
-    msg_less db "AX < BX (Signed Less)",10,0
+    msg_less db "Hello, This is Laureen Ndanu, Admission Number 167075",10,0
+    name_len equ $ - msg_less
     msg_not_less db "AX >= BX (Not Less)",10,0
 
 section .text
@@ -20,7 +21,7 @@ less:
 print:
     mov eax,4
     mov ebx,1
-    mov edx,40
+    mov edx, name_len
     int 0x80
 
     mov eax,1

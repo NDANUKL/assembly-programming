@@ -1,7 +1,8 @@
 ; JBE / JNA → Jump if Below or Equal
 
 section .data
-    str_be db "AX <= BX (Below or Equal)",10,0
+    str_be db "Hello, This is Laureen Ndanu, Admission Number 167075",10,0
+    name_len equ $ - str_be
     str_above db "AX > BX (Above)",10,0
 
 section .text
@@ -21,7 +22,7 @@ below_equal:
 print:
     mov eax,4
     mov ebx,1
-    mov edx,30
+    mov edx, 80
     int 0x80
 
     mov eax,1

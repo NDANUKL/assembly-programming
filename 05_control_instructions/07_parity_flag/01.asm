@@ -1,6 +1,7 @@
 ; JP / JPE → Jump if Parity Even
 section .data
-    msg_even db "Parity Even (PF=1)",10,0
+    msg_even db "Hello, This is Laureen Ndanu, Admission Number 167075",10,0
+    name_len equ $ - msg_even
     msg_odd db "Parity Odd (PF=0)",10,0
 
 section .text
@@ -19,7 +20,7 @@ even:
 print:
     mov eax,4
     mov ebx,1
-    mov edx,40
+    mov edx,name_len
     int 0x80
 
     mov eax,1
